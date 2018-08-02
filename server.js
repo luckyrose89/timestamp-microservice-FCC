@@ -2,7 +2,9 @@
 // where your node app starts
 
 // init project
-var express = require('express');
+const express = require('express');
+const moment = require('moment');
+
 var app = express();
 
 // temporary port variable for local testing
@@ -17,14 +19,18 @@ app.use(cors({optionSuccessStatus: 200}));  // some legacy browsers choke on 204
 app.use(express.static('public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.get("/", function (req, res) {
+app.get("/", (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 });
 
 
 // your first API endpoint... 
-app.get("/api/hello", function (req, res) {
+app.get("/api/hello", (req, res) => {
   res.json({greeting: 'hello API'});
+});
+
+app.get("/api/:date_string?", (req, res) => {
+
 });
 
 
