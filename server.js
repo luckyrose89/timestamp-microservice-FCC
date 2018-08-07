@@ -41,13 +41,13 @@ app.get("/api/:date_string?", (req, res) => {
     'utc': null
   };
   var reg = /^\d+$/;
-  if (reg.test(dateString) && len === 10) {
+  if (reg.test(dateString)) {
     result.unix = dateString * 1000;
-    result.utc = moment.utc(dateString, 'X').format('LLLL');
+    result.utc = moment.utc(dateString, 'X').format('ddd, DD MMM YYYY HH:mm:ss [GMT]');
     res.json(result);
   } else if (flag) {
       result.unix = (day.format('x'));
-      result.utc = day.format('YYYY-MM-DD');
+      result.utc = day.format('ddd, DD MMM YYYY HH:mm:ss [GMT]');
       res.json(result);
     } else {
       res.json({"error" : "Invalid Date" });
