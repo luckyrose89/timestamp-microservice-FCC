@@ -31,7 +31,7 @@ app.get("/api/hello", (req, res) => {
   });
 });
 
-app.get("/api/:date_string?", (req, res) => {
+app.get("/api/timestamp/:date_string?", (req, res) => {
   var dateString = req.params.date_string;
   var len = dateString.length;
   var day = moment.utc(dateString, 'YYYY-MM-DD', true);
