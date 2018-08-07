@@ -42,8 +42,8 @@ app.get("/api/timestamp/:date_string?", (req, res) => {
   };
   var reg = /^\d+$/;
   if (reg.test(dateString)) {
-    result.unix = dateString * 1000;
-    result.utc = moment.utc(dateString, 'X').format('ddd, DD MMM YYYY HH:mm:ss [GMT]');
+    result.unix = dateString;
+    result.utc = moment.utc(dateString, 'x').format('ddd, DD MMM YYYY HH:mm:ss [GMT]');
     res.json(result);
   } else if (flag) {
       result.unix = (day.format('x'));
