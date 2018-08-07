@@ -13,7 +13,7 @@ e.g. `{"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}`.
 
 #### Example usage:
 * https://raspy-accordion.glitch.me/api/timestamp/2015-12-25
-* https://raspy-accordion.glitch.me/api/timestamp/1450137600
+* https://raspy-accordion.glitch.me/api/timestamp/1450137600000
 
 #### Example output:
 * { "unix": 1450137600, "natural": "December 15, 2015" }
